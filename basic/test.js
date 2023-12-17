@@ -4,12 +4,15 @@
 const accountNumber = 1000;
 let accountName = "YASH ADHAU";
 var accounttype = "Savings";
-
+/*
+Don't use var
+*/
 let accountStates ;
 
 // accountNumber = 2000;
 accountName="Purva Adhau"
 accounttype="current"
+accountStates = true;
 
 let anyNumber = 100
 
