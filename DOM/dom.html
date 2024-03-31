@@ -3,9 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Learning</title>
+    <style>
+            .black{
+                background-color: black;
+                color: #fff;
+            }
+    </style>
 </head>
-<body>
-    
+<body class="black"> 
+    <div>
+        <h1 id="title" class="heading">Hello World!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque autem soluta officia rem animi? Eum ex assumenda sapiente quia pariatur necessitatibus veritatis, similique eligendi sed, tempora voluptates laborum. Quidem, ipsa?</p>
+    </div>
+
+    <ul class="Language">
+        <li>JS</li>
+        <li>CPP</li>
+    </ul>
 </body>
+
+<script>
+    const div = document.createElement("div")
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title" , "Yash")
+    div.style.backgroundColor = "green"
+    div.style.color = "Red"
+    // div.innerText = "Yash is great"
+    const addtext = document.createTextNode("YASH IS GREAT.")
+    div.appendChild(addtext)
+    
+    document.body.appendChild(div)
+
+
+    function addlanguage(languageName){
+        const addElement = document.createElement("li")
+        addElement.innerHTML = `${languageName}`
+        document.querySelector('.Language').appendChild(addElement)
+    }
+    addlanguage("PY")
+    addlanguage("GO")
+
+
+    function addLanguage(languageName){
+        const addElement = document.createElement("li")
+        addElement.appendChild(document.createTextNode(languageName))
+        document.querySelector(".Language").appendChild(addElement)
+    }
+    addLanguage("GO LANG")
+    addLanguage("PYTHON")
+    addLanguage("RUBY")
+
+
+    //edits
+    const secoundLanguage = document.querySelector("li:nth-child(4)")
+    const li = document.createElement("li")
+    li.textContent = "MOJO"
+    secoundLanguage.replaceWith(li)
+
+    const firstLanguage = document.querySelector("li:first-child")
+    firstLanguage.outerHTML = '<li>TypeScript</li>'
+
+    const lastLanguage = document.querySelector("li:last-child")
+    lastLanguage.remove()
+
+</script>
+
 </html>
